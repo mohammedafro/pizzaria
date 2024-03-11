@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> login page </title>
+<link rel="stylesheet" href="assets/login_1.css"/>
+</head>
+<body>
+  <body>
+    <marquee style="background-color: #ff9529,aliceblue;"><H1>PIZZERIA:TOWN'S PREMIER PIZZA</H1></marquee>
+    <div class="login-page" style="width:100%;">
+      <div class="form" style="width:100%;">
+        <div class="login">
+          <div>
+            <h3>LOGIN</h3>
+            <p>Please enter your credentials to login.</p>
+          </div>
+        </div>
+        <form class="/" method="post">
+        <input type="text" name="username" placeholder="Enter your name" required/>
+        <input type="password" placeholder="Enter the password" name="password" required/>
+        <input class="button" type="submit" name="submit1"/>
+       <p class="message">Not registered? <a href="">Create an account</a></p>
+      </form>
+     </div>
+     <script>
+       const inputs = document.querySelectorAll("input");
+       
+            inputs.forEach((input)=>{
+                 input.addEventListener('keyup',(e)=>{
+                    Valid(e.target,regex[e.target.attributes.name.value]);
+                 })
+               })
+   
+           const regex = {
+                  username:/^\w+$/i,
+                  password:/^[a-zA-Z0-9]{10,100}$/i,
+             }
+   
+            const Valid = (field,reg) =>{
+                if(reg.test(field.value)){
+                    field.className='Valid';
+                }
+                else{
+                    field.className='Invalid';
+                }
+               }
+            
+      </script>
+    </body>
+   </html>
